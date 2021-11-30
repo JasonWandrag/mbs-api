@@ -3,8 +3,11 @@ const mongoose = require("mongoose");
 const app = express();
 require("dotenv/config");
 
+// Import Routes
+const postRoutes = require("./routes/posts");
+
 // Middleware
-// app.use();
+app.use("/posts", postRoutes);
 
 // ROUTES
 app.get("/", (req, res) => {
