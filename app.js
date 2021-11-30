@@ -5,9 +5,11 @@ require("dotenv/config");
 
 // Import Routes
 const postRoutes = require("./routes/posts");
+const productRoutes = require("./routes/products");
 
 // Middleware
 app.use("/posts", postRoutes);
+app.use("/products", productRoutes);
 
 // ROUTES
 app.get("/", (req, res) => {
