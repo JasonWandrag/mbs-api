@@ -13,6 +13,22 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   console.log(req.body);
+  const product = new Product({
+    id: req.body.id,
+    title: req.body.title,
+    price: req.body.price,
+    description: req.body.description,
+    stock: req.body.stock,
+    category: req.body.category,
+    SKU: req.body.SKU,
+  });
+
+  product
+    .save()
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => res.json({ msg: err }));
 });
 
 // Export to router
